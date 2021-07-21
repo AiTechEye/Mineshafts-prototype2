@@ -1,0 +1,225 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://engine/MainManu/MainManu.gd" type="Script" id=1]
+
+[node name="MainManu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Camera" type="Camera" parent="."]
+current = true
+
+[node name="mesh" type="MeshInstance" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.47059 )
+
+[node name="panel" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -237.0
+margin_top = -144.0
+margin_right = 237.0
+margin_bottom = 144.0
+color = Color( 0.145098, 0.145098, 0.145098, 0.145098 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="Button" parent="panel"]
+margin_left = 205.0
+margin_top = 4.0
+margin_right = 286.0
+margin_bottom = 24.0
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="del" type="Button" parent="panel"]
+margin_left = 205.0
+margin_top = 26.0
+margin_right = 286.0
+margin_bottom = 46.0
+text = "Delete"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="new" type="Button" parent="panel"]
+margin_left = 286.0
+margin_top = 4.0
+margin_right = 367.0
+margin_bottom = 24.0
+text = "New world"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="LineEdit" parent="panel/new"]
+visible = false
+margin_left = 83.0
+margin_top = -2.0
+margin_right = 188.0
+margin_bottom = 22.0
+hint_tooltip = "World name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mapagens" type="OptionButton" parent="panel/new"]
+visible = false
+margin_left = 83.0
+margin_top = 22.0
+margin_right = 188.0
+margin_bottom = 42.0
+text = "mapgen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="worlds" type="ItemList" parent="panel"]
+margin_right = 200.0
+margin_bottom = 130.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="mods" type="ItemList" parent="panel"]
+margin_top = 130.0
+margin_right = 200.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="modding" type="Control" parent="panel"]
+margin_left = 200.0
+margin_top = 130.0
+margin_right = 424.0
+margin_bottom = 449.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpenDir" type="Button" parent="panel/modding"]
+margin_left = 180.854
+margin_right = 271.854
+margin_bottom = 20.0
+text = "Game folder"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DelMod" type="Button" parent="panel/modding"]
+margin_left = 180.854
+margin_top = 24.0
+margin_right = 271.854
+margin_bottom = 44.0
+text = "Delete mod"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enable" type="CheckBox" parent="panel/modding"]
+margin_left = 5.0
+margin_right = 83.0
+margin_bottom = 24.0
+text = "Enabled"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="actor_info" type="Label" parent="panel/modding"]
+margin_left = 112.0
+margin_top = 24.0
+margin_right = 274.0
+margin_bottom = 38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="actor" type="Label" parent="panel/modding"]
+margin_left = 5.0
+margin_top = 24.0
+margin_right = 112.0
+margin_bottom = 38.0
+text = "Actor: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="version" type="Label" parent="panel/modding"]
+margin_left = 5.0
+margin_top = 38.0
+margin_right = 112.0
+margin_bottom = 52.0
+text = "Version:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="version_info" type="Label" parent="panel/modding"]
+margin_left = 112.0
+margin_top = 38.0
+margin_right = 274.0
+margin_bottom = 52.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Build in version" type="Label" parent="panel/modding"]
+margin_left = 5.0
+margin_top = 52.0
+margin_right = 112.0
+margin_bottom = 66.0
+text = "Build in version:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="build_info" type="Label" parent="panel/modding"]
+margin_left = 112.0
+margin_top = 52.0
+margin_right = 274.0
+margin_bottom = 66.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="panel/modding"]
+margin_left = 5.0
+margin_top = 66.0
+margin_right = 112.0
+margin_bottom = 80.0
+text = "Description:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description_text" type="TextEdit" parent="panel/modding"]
+margin_left = 5.0
+margin_top = 80.0
+margin_right = 274.0
+margin_bottom = 158.0
+readonly = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="panel/play" to="." method="play"]
+[connection signal="pressed" from="panel/del" to="." method="delworld"]
+[connection signal="pressed" from="panel/new" to="." method="new_pressed"]
+[connection signal="item_selected" from="panel/worlds" to="." method="worlds_selected"]
+[connection signal="item_selected" from="panel/mods" to="." method="mods_selected"]
+[connection signal="pressed" from="panel/modding/OpenDir" to="." method="OpenGF"]
+[connection signal="pressed" from="panel/modding/DelMod" to="." method="DelMod"]
+[connection signal="pressed" from="panel/modding/enable" to="." method="enable_mod"]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://engine/MainManu/MainManu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://engine/WAEditor/WAEditor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main.gd" type="Script" id=3]
+[ext_resource path="res://engine/ui/ui.tscn" type="PackedScene" id=4]
+[ext_resource path="res://engine/loader/loader.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 0.447059, 0.666667, 0.858824, 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+
+[node name="main" type="Spatial"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="MainManu" parent="." instance=ExtResource( 1 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="Editor" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="ui" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="exitmsg" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.2, 0.2, 0.2, 0.92 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="center" type="CenterContainer" parent="exitmsg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -512.0
+margin_bottom = -300.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="exitmsg/center"]
+margin_left = 171.0
+margin_top = 134.0
+margin_right = 340.0
+margin_bottom = 165.0
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+text = "A fatal error occoupted.
+No information about that."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="close" type="Button" parent="exitmsg"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -23.0
+margin_top = 514.0
+margin_right = 24.0
+margin_bottom = -50.0
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loader" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[connection signal="pressed" from="exitmsg/close" to="." method="close_msg"]

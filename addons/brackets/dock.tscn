@@ -1,0 +1,72 @@
+[gd_scene format=2]
+
+[node name="Brackets" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="[" type="Button" parent="."]
+margin_right = 50.0
+margin_bottom = 50.0
+text = "["
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="]" type="Button" parent="."]
+margin_left = 50.0
+margin_right = 100.0
+margin_bottom = 50.0
+text = "]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="[]" type="Button" parent="."]
+margin_left = 100.0
+margin_right = 150.0
+margin_bottom = 50.0
+text = "[]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="{" type="Button" parent="."]
+margin_top = 50.0
+margin_right = 50.0
+margin_bottom = 100.0
+text = "{"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="}" type="Button" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 100.0
+margin_bottom = 100.0
+text = "}"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="{}" type="Button" parent="."]
+margin_left = 100.0
+margin_top = 50.0
+margin_right = 150.0
+margin_bottom = 100.0
+text = "{}"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="$" type="Button" parent="."]
+margin_left = 150.0
+margin_right = 200.0
+margin_bottom = 50.0
+text = "$"
+__meta__ = {
+"_edit_use_anchors_": false
+}

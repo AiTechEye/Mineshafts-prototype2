@@ -1,0 +1,158 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://engine/WAEditor/WAEditor.gd" type="Script" id=1]
+
+[node name="Editor" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.0784314 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="manu" type="Panel" parent="."]
+margin_right = 100.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="LineEdit" parent="manu"]
+margin_right = 100.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Unamed"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Mod name"
+}
+
+[node name="nodes" type="ItemList" parent="manu"]
+margin_top = 88.0
+margin_right = 100.0
+margin_bottom = 550.0
+allow_reselect = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="Button" parent="manu"]
+margin_top = 48.0
+margin_right = 50.0
+margin_bottom = 68.0
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="run" type="Button" parent="manu"]
+margin_top = 68.0
+margin_right = 50.0
+margin_bottom = 88.0
+text = "Run"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="more" type="Button" parent="manu"]
+margin_left = 50.0
+margin_top = 68.0
+margin_right = 100.0
+margin_bottom = 88.0
+text = "More"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="morei" type="ColorRect" parent="manu/more"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 25.0
+margin_top = -10.0
+margin_right = 225.0
+margin_bottom = 118.0
+color = Color( 0.3, 0.3, 0.3, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="description" type="TextEdit" parent="manu/more/morei"]
+margin_top = 24.0
+margin_right = 200.0
+margin_bottom = 128.0
+hint_tooltip = "Description"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="actor" type="LineEdit" parent="manu/more/morei"]
+margin_right = 124.0
+margin_bottom = 24.0
+hint_tooltip = "Actor"
+align = 1
+
+[node name="version" type="SpinBox" parent="manu/more/morei"]
+margin_left = 124.3
+margin_right = 198.3
+margin_bottom = 24.0
+hint_tooltip = "Version"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="password" type="LineEdit" parent="manu"]
+margin_top = 24.0
+margin_right = 100.0
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Add a password if you want to prevent people to open and or edit your mod"
+}
+
+[node name="passerr" type="ColorRect" parent="manu/password"]
+visible = false
+margin_right = 100.0
+margin_bottom = 24.0
+color = Color( 1, 0, 0, 0.396078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="manu/password/passerr"]
+margin_right = 100.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Password"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="load" type="Button" parent="manu"]
+margin_left = 50.0
+margin_top = 48.0
+margin_right = 100.0
+margin_bottom = 68.0
+text = "Load"
+
+[node name="del" type="ColorRect" parent="manu"]
+margin_top = 550.0
+margin_right = 50.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="item_selected" from="manu/nodes" to="." method="_on_nodes_manu_selected"]
+[connection signal="pressed" from="manu/save" to="." method="save_data"]
+[connection signal="pressed" from="manu/run" to="." method="run_mod"]
+[connection signal="pressed" from="manu/more" to="." method="more"]
+[connection signal="pressed" from="manu/load" to="." method="load_data"]

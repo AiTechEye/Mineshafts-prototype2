@@ -6,7 +6,9 @@ Licenses: code: GPL-2.0, media: CC BY-SA-4.0
 this is a Godot game project: https://godotengine.org  
 Version 1: https://github.com/AiTechEye/Godot-Voxel-Prototype
 
-This was meant to be a personal project, with a full game as goal, but got a spoke in the wheel.
+Youtube: https://youtu.be/kyp4exCm6XU
+
+This was meant to be a personal project, with a full game as goal, but got an inevitable problem.
 So instead of deleting the whole project i uploaded it here, so you all can enjoy it :)
 
 This is a voxel based game prototype, physic items and even a basic realtime node-based modeditor
@@ -14,6 +16,8 @@ This is a voxel based game prototype, physic items and even a basic realtime nod
 |Action|Control|
 |----|----|
 |Move|A,S,D,W|
+|Dig/Place/Physc pickup|L/R mouse button|
+|Physc pickup both hands|R & L mouse buttons|
 |Jump|Space|
 Fly/Walk mode|F|
 Fly slow|SHIFT|
